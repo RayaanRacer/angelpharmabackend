@@ -425,7 +425,8 @@ const getProductsList = async (req, res) => {
     // Using mongoose-aggregate-paginate-v2 for pagination
     const options = {
       page: parseInt(page) || 1,
-      limit: parseInt(limit) || 10,
+      // limit: parseInt(limit) || 200,
+      limit: 200,
     };
 
     const aggregatedData = await Product.aggregatePaginate(
